@@ -5,7 +5,9 @@ import {HttpExceptionFilter} from "./filters/http.filter";
 import {FallbackExceptionFilter} from "./filters/fallback.filter";
 import {ValidationException} from "./filters/validation.exception";
 import {ValidationError, ValidationPipe} from "@nestjs/common";
+import * as mongoose from 'mongoose';
 
+mongoose.set('useFindAndModify', false);
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
